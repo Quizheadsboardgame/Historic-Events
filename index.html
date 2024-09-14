@@ -1,0 +1,183 @@
+const questions = [
+    { question: "What year did the Titanic sink?", answer: "1912" },
+    { question: "Who was the first person to walk on the moon?", answer: "Neil Armstrong" },
+    { question: "What event started World War I?", answer: "Assassination of Archduke Franz Ferdinand" },
+    { question: "When did the Berlin Wall fall?", answer: "1989" },
+    { question: "Which country was the first to grant women the right to vote?", answer: "New Zealand" },
+    { question: "What year did the Cold War end?", answer: "1991" },
+    { question: "Who was the leader of the Soviet Union during World War II?", answer: "Joseph Stalin" },
+    { question: "What year did the first human spaceflight occur?", answer: "1961" },
+    { question: "Which battle was a turning point in the American Civil War?", answer: "Battle of Gettysburg" },
+    { question: "Who was the first President of the United States?", answer: "George Washington" },
+    { question: "What event marked the beginning of the French Revolution?", answer: "Storming of the Bastille" },
+    { question: "Which famous shipwreck was discovered by Robert Ballard in 1985?", answer: "Titanic" },
+    { question: "What was the name of the first artificial Earth satellite?", answer: "Sputnik" },
+    { question: "In which year did the Vietnam War end?", answer: "1975" },
+    { question: "What was the primary cause of the American Revolution?", answer: "Taxation without representation" },
+    { question: "Who was the British Prime Minister during World War II?", answer: "Winston Churchill" },
+    { question: "What year was the Declaration of Independence signed?", answer: "1776" },
+    { question: "What major event occurred on September 11, 2001?", answer: "Terrorist attacks on the World Trade Center" },
+    { question: "Which historical event is known as 'D-Day'?", answer: "The Allied invasion of Normandy" },
+    { question: "Who was the leader of the Nazi Party during World War II?", answer: "Adolf Hitler" },
+    { question: "What was the name of the ship that carried the Pilgrims to America in 1620?", answer: "Mayflower" },
+    { question: "What year did the Korean War begin?", answer: "1950" },
+    { question: "What was the significance of the Treaty of Versailles?", answer: "It ended World War I" },
+    { question: "Which event is commonly considered the start of the Great Depression?", answer: "The Stock Market Crash of 1929" },
+    { question: "What was the name of the first successful human organ transplant?", answer: "Kidney transplant" },
+    { question: "What year did the Chernobyl disaster occur?", answer: "1986" },
+    { question: "Who was the first female Prime Minister of the United Kingdom?", answer: "Margaret Thatcher" },
+    { question: "What is the name of the first successful powered flight?", answer: "Wright brothers' flight" },
+    { question: "What year did the fall of Constantinople happen?", answer: "1453" },
+    { question: "What was the name of the project that developed the first atomic bombs?", answer: "Manhattan Project" },
+    { question: "Who was the leader of the Cuban Revolution?", answer: "Fidel Castro" },
+    { question: "What was the name of the first human in space?", answer: "Yuri Gagarin" },
+    { question: "What was the main cause of the 2008 financial crisis?", answer: "Subprime mortgage crisis" },
+    { question: "What year did the French and Indian War begin?", answer: "1754" },
+    { question: "Which city was the host of the 2016 Summer Olympics?", answer: "Rio de Janeiro" },
+    { question: "Who was the leader of the Indian independence movement?", answer: "Mahatma Gandhi" },
+    { question: "What year did the United Nations officially come into existence?", answer: "1945" },
+    { question: "What was the name of the famous ship that was part of the Lewis and Clark Expedition?", answer: "The Corps of Discovery" },
+    { question: "What year did the U.S. enter World War II?", answer: "1941" },
+    { question: "Which historical event is known as the 'Great Fire of London'?", answer: "The fire that swept through London in 1666" },
+    { question: "Who was the U.S. President during the Cuban Missile Crisis?", answer: "John F. Kennedy" },
+    { question: "What year was the Berlin Airlift?", answer: "1948-1949" },
+    { question: "Which famous speech was delivered by Martin Luther King Jr. in 1963?", answer: "I Have a Dream" },
+    { question: "What was the name of the first American woman in space?", answer: "Valentina Tereshkova" },
+    { question: "What year did the Apollo 11 mission land on the moon?", answer: "1969" },
+    { question: "What was the name of the first successful artificial heart transplant?", answer: "Jarvik-7" },
+    { question: "Which event marked the end of apartheid in South Africa?", answer: "Election of Nelson Mandela as President" },
+    { question: "What year did the Soviet Union dissolve?", answer: "1991" },
+    { question: "What was the name of the conflict between the U.S. and the Soviet Union in the 1960s?", answer: "Cuban Missile Crisis" },
+    { question: "Who was the leader of the American civil rights movement?", answer: "Martin Luther King Jr." },
+    { question: "What year did the discovery of penicillin occur?", answer: "1928" },
+    { question: "What was the name of the disease that caused the Black Death?", answer: "Bubonic plague" },
+    { question: "What event marked the end of the medieval period?", answer: "Renaissance" },
+    { question: "What year did the first World Cup take place?", answer: "1930" },
+    { question: "Who was the first woman to fly solo across the Atlantic Ocean?", answer: "Amelia Earhart" },
+    { question: "What year did the Spanish Armada attempt to invade England?", answer: "1588" },
+    { question: "Who was the first emperor of China?", answer: "Qin Shi Huang" },
+    { question: "What was the name of the ship that carried the first enslaved Africans to the American colonies?", answer: "The White Lion" },
+    { question: "Which major event occurred in 1968 involving civil rights protests?", answer: "Assassination of Martin Luther King Jr." },
+    { question: "What was the name of the agreement that ended World War II in Europe?", answer: "Unconditional surrender" },
+    { question: "What was the name of the 1969 moon landing mission?", answer: "Apollo 11" },
+    { question: "What was the historical significance of the Magna Carta?", answer: "It limited the powers of the monarchy" },
+    { question: "What year did the U.S. first land a rover on Mars?", answer: "1976" },
+    { question: "What was the name of the U.S. operation that led to the capture of Saddam Hussein?", answer: "Operation Iraqi Freedom" },
+    { question: "Which event marked the end of the Soviet Union?", answer: "The fall of the Berlin Wall" },
+    { question: "What year did the first successful human flight to space take place?", answer: "1961" },
+    { question: "Who was the famous leader of the French Revolution?", answer: "Maximilien Robespierre" },
+    { question: "What was the name of the ship that Charles Darwin sailed on during his voyage of discovery?", answer: "HMS Beagle" },
+    { question: "What was the major economic event that occurred in the 1930s?", answer: "The Great Depression" },
+    { question: "What year was the first manned mission to the moon?", answer: "1969" },
+    { question: "What was the name of the conflict between the North and South in the U.S. from 1861-1865?", answer: "American Civil War" },
+    { question: "What event in 1989 marked the end of the Cold War?", answer: "Fall of the Berlin Wall" },
+    { question: "What was the primary cause of the American Civil War?", answer: "Slavery" },
+    { question: "What was the significant military campaign of 1944 during World War II?", answer: "D-Day" },
+    { question: "Who was the famous British explorer who discovered the South Pole?", answer: "Robert Falcon Scott" },
+    { question: "What was the significance of the Watergate scandal?", answer: "It led to the resignation of President Nixon" },
+    { question: "What year did the first U.S. President serve?", answer: "1789" },
+    { question: "Which treaty ended the Mexican-American War?", answer: "Treaty of Guadalupe Hidalgo" },
+    { question: "What was the name of the conflict between the U.S. and Iraq that began in 1990?", answer: "Gulf War" },
+    { question: "What year did the Soviet Union launch the first artificial satellite?", answer: "1957" },
+    { question: "Who was the first African American President of the United States?", answer: "Barack Obama" },
+    { question: "What was the name of the event where the U.S. declared its independence from Britain?", answer: "Declaration of Independence" },
+    { question: "What was the primary goal of the Marshall Plan?", answer: "To rebuild Europe after World War II" },
+    { question: "What year did the first successful human organ transplant occur?", answer: "1954" },
+    { question: "What was the name of the ship that carried the first Europeans to the New World?", answer: "Santa Maria" },
+    { question: "What was the significance of the Apollo 13 mission?", answer: "It was a spaceflight that nearly ended in disaster but was safely returned to Earth" },
+    { question: "What year did the United Nations first meet?", answer: "1945" },
+    { question: "What was the primary cause of the French Revolution?", answer: "Social inequality and financial crisis" },
+    { question: "Who was the famous British Prime Minister during World War II?", answer: "Winston Churchill" },
+    { question: "What year did the first successful test of a nuclear bomb occur?", answer: "1945" },
+    { question: "Who was the famous physicist who developed the theory of relativity?", answer: "Albert Einstein" },
+    { question: "What was the name of the first successful American space mission to land on the moon?", answer: "Apollo 11" },
+    { question: "What was the name of the conflict between the U.S. and the British Empire from 1775-1783?", answer: "American Revolutionary War" },
+    { question: "What year did the invention of the telephone occur?", answer: "1876" },
+    { question: "What was the historical significance of the Battle of Waterloo?", answer: "It ended Napoleon's rule in France" },
+    { question: "Who was the leader of the Soviet Union during the Cuban Missile Crisis?", answer: "Nikita Khrushchev" },
+    { question: "What year did the discovery of DNA's double helix structure occur?", answer: "1953" },
+    { question: "What was the main cause of the fall of the Roman Empire?", answer: "Barbarian invasions" },
+    { question: "Who was the famous artist of the Mona Lisa?", answer: "Leonardo da Vinci" },
+    { question: "What was the significance of the Treaty of Paris 1783?", answer: "It ended the American Revolutionary War" },
+    { question: "What year did the Industrial Revolution begin?", answer: "1760" },
+    { question: "What was the name of the event where the Berlin Wall was erected?", answer: "Construction of the Berlin Wall" },
+    { question: "Who was the leader of the South African anti-apartheid movement?", answer: "Nelson Mandela" },
+    { question: "What year did the first successful flight of the Wright brothers' aircraft occur?", answer: "1903" },
+    { question: "What was the primary cause of the Spanish Civil War?", answer: "Political and military tensions" },
+    { question: "Who was the first President of the Republic of China?", answer: "Sun Yat-sen" },
+    { question: "What year did the U.S. purchase Alaska from Russia?", answer: "1867" },
+    { question: "What was the significance of the Magna Carta?", answer: "It limited the power of the English king" },
+    { question: "Who was the famous American abolitionist leader?", answer: "Frederick Douglass" },
+    { question: "What year did the sinking of the Lusitania occur?", answer: "1915" },
+    { question: "What was the name of the first successful human heart transplant?", answer: "The Christiaan Barnard heart transplant" },
+    { question: "What year was the first U.S. moon landing?", answer: "1969" },
+    { question: "What was the historical significance of the Bay of Pigs invasion?", answer: "It was a failed attempt to overthrow Castro's regime in Cuba" },
+    { question: "What year was the end of the apartheid era in South Africa?", answer: "1994" },
+    { question: "What was the name of the U.S. space shuttle that exploded in 1986?", answer: "Challenger" },
+    { question: "What was the historical significance of the Nuremberg Trials?", answer: "It prosecuted major war criminals from World War II" },
+    { question: "What year did the Russian Revolution take place?", answer: "1917" },
+    { question: "What was the name of the first U.S. satellite?", answer: "Explorer 1" },
+    { question: "Who was the famous explorer who discovered America in 1492?", answer: "Christopher Columbus" },
+    { question: "What year did the end of the Soviet Union occur?", answer: "1991" },
+    { question: "What was the primary goal of the Marshall Plan?", answer: "To rebuild European economies after World War II" },
+    { question: "What year was the launch of the Hubble Space Telescope?", answer: "1990" },
+    { question: "What was the name of the U.S. President who signed the Emancipation Proclamation?", answer: "Abraham Lincoln" },
+    { question: "What year did the fall of the Berlin Wall occur?", answer: "1989" },
+    { question: "What was the primary cause of the Thirty Years' War?", answer: "Religious conflict in Europe" },
+    { question: "Who was the famous inventor of the light bulb?", answer: "Thomas Edison" },
+    { question: "What year did the first successful flight of the Wright brothers occur?", answer: "1903" },
+    { question: "What was the name of the famous 18th-century French revolutionist who wrote 'The Social Contract'?", answer: "Jean-Jacques Rousseau" },
+    { question: "What year did the Titanic sink?", answer: "1912" },
+    { question: "Who was the famous Greek philosopher who taught Alexander the Great?", answer: "Aristotle" },
+    { question: "What was the name of the first successful U.S. military satellite?", answer: "The Keyhole" },
+    { question: "What year was the end of the Cold War?", answer: "1991" },
+    { question: "Who was the famous British explorer known for his expeditions to Africa?", answer: "David Livingstone" },
+    { question: "What was the historical significance of the Battle of Agincourt?", answer: "It was a major English victory in the Hundred Years' War" },
+    { question: "What year was the Treaty of Versailles signed?", answer: "1919" },
+    { question: "Who was the leader of the Chinese Nationalist Party during the Chinese Civil War?", answer: "Chiang Kai-shek" },
+    { question: "What was the name of the German airship that crashed in 1937?", answer: "Hindenburg" },
+    { question: "What year did the U.S. win its independence from Britain?", answer: "1776" },
+    { question: "Who was the leader of the English Reformation?", answer: "Henry VIII" },
+    { question: "What was the name of the first human spaceflight?", answer: "Vostok 1" },
+    { question: "What year did the fall of Constantinople occur?", answer: "1453" },
+    { question: "What was the historical significance of the Magna Carta?", answer: "It limited the powers of the English monarchy" },
+    { question: "Who was the famous U.S. President who led the country through the Civil War?", answer: "Abraham Lincoln" },
+    { question: "What year did the first human organ transplant take place?", answer: "1954" },
+    { question: "What was the name of the Soviet space station that was the first to host a human crew?", answer: "Mir" },
+    { question: "What was the primary cause of the French Revolution?", answer: "Economic hardship and social inequality" },
+    { question: "Who was the famous American inventor who created the phonograph?", answer: "Thomas Edison" },
+    { question: "What year did the first manned mission to Mars occur?", answer: "Not yet occurred" },
+    { question: "What was the historical significance of the Magna Carta?", answer: "It laid the foundation for modern democracy" }
+];
+
+let currentQuestionIndex = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
+
+    document.getElementById('submit').addEventListener('click', checkAnswer);
+    document.getElementById('next').addEventListener('click', loadNextQuestion);
+});
+
+function loadQuestion() {
+    const questionElement = document.getElementById('question');
+    const resultElement = document.getElementById('result');
+    resultElement.innerText = '';
+    questionElement.innerText = questions[currentQuestionIndex].question;
+}
+
+function checkAnswer() {
+    const answer = document.getElementById('answer').value.trim();
+    const resultElement = document.getElementById('result');
+    
+    if (answer.toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
+        resultElement.innerText = 'Correct!';
+    } else {
+        resultElement.innerText = `Incorrect. The correct answer is: ${questions[currentQuestionIndex].answer}`;
+    }
+}
+
+function loadNextQuestion() {
+    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    loadQuestion();
+}
